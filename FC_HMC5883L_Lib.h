@@ -20,7 +20,7 @@
 #include <Wire.h>
 
 // !!! Comment if you don't want to debug
-#define SERIAL_CALIBRATION_DEBUG
+//#define SERIAL_CALIBRATION_DEBUG
 
 
 class FC_HMC5883L_Lib
