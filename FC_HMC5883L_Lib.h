@@ -11,12 +11,7 @@
 #ifndef _FC_HMC5883L_LIB_h
 #define _FC_HMC5883L_LIB_h
 
-#if defined(ARDUINO) && ARDUINO >= 100
-	#include "arduino.h"
-#else
-	#include "WProgram.h"
-#endif
-
+#include "arduino.h"
 #include <Wire.h>
 
 // !!! Comment if you don't want to debug
