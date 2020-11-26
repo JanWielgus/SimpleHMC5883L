@@ -46,7 +46,7 @@ void SimpleHMC5883L::readRaw()
 	Wire.write(0x03);
 	Wire.endTransmission();
 
-	Wire.requestFrom(HMC5883L_Address, 6);
+	Wire.requestFrom(HMC5883L_Address, (uint8_t)6);
 	rawData.x = Wire.read() << 8 | Wire.read();
 	rawData.z = Wire.read() << 8 | Wire.read();
 	rawData.y = Wire.read() << 8 | Wire.read();
@@ -58,13 +58,13 @@ void SimpleHMC5883L::readRaw()
 }
 
 
-vector3Int16& SimpleHMC5883L::getRaw()
+SimpleHMC5883L::vector3Int16& SimpleHMC5883L::getRaw()
 {
 	return rawData;
 }
 
 
-vector3Float& SimpleHMC5883L::getNormalized()
+SimpleHMC5883L::vector3Float& SimpleHMC5883L::getNormalized()
 {
 	normData.y = (float)rawData.y * compassNormalizeMultiplier;
 	normData.z = (float)rawData.z * compassNormalizeMultiplier;
@@ -116,7 +116,7 @@ void SimpleHMC5883L::calibrate(uint16_t duration)
 }
 
 
-const vector3Int16& SimpleHMC5883L::getCompassOffset()
+SimpleHMC5883L::vector3Int16 SimpleHMC5883L::getCompassOffset()
 {
 	return offset;
 }

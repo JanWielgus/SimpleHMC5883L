@@ -54,7 +54,7 @@ public:
 	vector3Int16& getRaw();
 	vector3Float& getNormalized();
 	void calibrate(uint16_t duration = 30); // in seconds
-	const vector3Int16& getCompassOffset();
+	vector3Int16 getCompassOffset();
 	void setCompassOffset(int16_t offX, int16_t offY, int16_t offZ);
 };
 
