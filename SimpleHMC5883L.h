@@ -51,10 +51,10 @@ public:
 	bool initialize();
 
 	void readRaw();
-	vector3Int16& getRaw();
-	vector3Float& getNormalized();
+	const vector3Int16& getRaw() const;
+	const vector3Float& getNormalized() const;
 	void calibrate(uint16_t duration = 30); // in seconds
-	vector3Int16 getCompassOffset();
+	vector3Int16 getCompassOffset() const;
 	void setCompassOffset(int16_t offX, int16_t offY, int16_t offZ);
 };
 

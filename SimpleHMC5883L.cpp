@@ -55,20 +55,21 @@ void SimpleHMC5883L::readRaw()
 	rawData.x -= offset.x;
 	rawData.y -= offset.y;
 	rawData.z -= offset.z;
+
+	normData.y = (float)rawData.y * compassNormalizeMultiplier;
+	normData.z = (float)rawData.z * compassNormalizeMultiplier;
+	normData.x = (float)rawData.x * compassNormalizeMultiplier;
 }
 
 
-SimpleHMC5883L::vector3Int16& SimpleHMC5883L::getRaw()
+const SimpleHMC5883L::vector3Int16& SimpleHMC5883L::getRaw() const
 {
 	return rawData;
 }
 
 
-SimpleHMC5883L::vector3Float& SimpleHMC5883L::getNormalized()
+const SimpleHMC5883L::vector3Float& SimpleHMC5883L::getNormalized() const
 {
-	normData.y = (float)rawData.y * compassNormalizeMultiplier;
-	normData.z = (float)rawData.z * compassNormalizeMultiplier;
-	normData.x = (float)rawData.x * compassNormalizeMultiplier;
 	return normData;
 }
 
@@ -116,7 +117,7 @@ void SimpleHMC5883L::calibrate(uint16_t duration)
 }
 
 
-SimpleHMC5883L::vector3Int16 SimpleHMC5883L::getCompassOffset()
+SimpleHMC5883L::vector3Int16 SimpleHMC5883L::getCompassOffset() const
 {
 	return offset;
 }
