@@ -10,7 +10,7 @@
 #define SIMPLEHMC5883L_H
 
 
-#include "arduino.h"
+#include "Arduino.h"
 #include <Wire.h>
 
 
