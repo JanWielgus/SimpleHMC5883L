@@ -9,9 +9,11 @@
 #ifndef SIMPLEHMC5883L_H
 #define SIMPLEHMC5883L_H
 
-
-#include "Arduino.h"
 #include <Wire.h>
+
+#ifdef ARDUINO
+    #include <Arduino.h>
+#endif
 
 
 class SimpleHMC5883L
