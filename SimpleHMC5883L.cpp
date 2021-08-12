@@ -62,13 +62,13 @@ void SimpleHMC5883L::readRaw()
 }
 
 
-const SimpleHMC5883L::vector3Int16& SimpleHMC5883L::getRaw() const
+const SimpleHMC5883L::vector3Int16 SimpleHMC5883L::getRaw() const
 {
 	return rawData;
 }
 
 
-const SimpleHMC5883L::vector3Float& SimpleHMC5883L::getNormalized() const
+const SimpleHMC5883L::vector3Float SimpleHMC5883L::getNormalized() const
 {
 	return normData;
 }
